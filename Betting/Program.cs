@@ -13,12 +13,17 @@ namespace Betting
                 user.Name = "Bob";
                 user.Username = "Bobina";
                 user.Balance = 77777;
-                user.Email = "somebody@mail.ru";
+                user.Email = "somebody@mail.com";
 
                 context.Users.Add(user);
 
+                var country = new Country();
+                country.Name = "Italy";
+
+
                 var town = new Town();
                 town.Name = "Rome";
+                town.Country = country;
 
                 context.Towns.Add(town);
 
@@ -38,11 +43,12 @@ namespace Betting
                 player.Name = "Chiro";
                 player.IsInjured = false;
                 player.SquadNumber = 27;
+                player.Position = position;
+                player.Team = team;
 
                 context.Players.Add(player);
 
-                var country = new Country();
-                country.Name = "Italy";
+
 
                 context.Countries.Add(country);
 
@@ -62,6 +68,8 @@ namespace Betting
                 playerStatistic.ScoredGoals = 9;
 
                 context.PlayerStatistics.Add(playerStatistic);
+
+                context.SaveChanges();
 
             }
         }
