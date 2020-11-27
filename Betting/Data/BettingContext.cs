@@ -1,4 +1,5 @@
 ﻿using Betting.Data.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Betting
 {
